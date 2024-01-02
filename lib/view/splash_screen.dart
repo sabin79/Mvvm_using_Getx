@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_mvvm/resources/routes/assects/image_assects.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,11 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('email_hint'.tr),
-        centerTitle: true,
-        backgroundColor: Colors.greenAccent,
-      ),
+      body: Image(image: AssetImage(ImageAssects.splashScreen)),
     );
   }
 }

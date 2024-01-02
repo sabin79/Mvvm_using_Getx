@@ -7,7 +7,7 @@ class Languages extends Translations {
           'email_hint': 'Enter Email',
         },
         'np_NP': {
-          'email_hint': 'इमेल प्रविष्ट गर्नुहोस्',
+          'email_hint': 'इमेल प्रष्ट गर्नुहोस्',
         },
       };
 }
