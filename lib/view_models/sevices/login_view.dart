@@ -19,6 +19,9 @@ class _LoginViewState extends State<LoginView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Login".tr),
+        backgroundColor: Colors.tealAccent,
+        elevation: 20,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
