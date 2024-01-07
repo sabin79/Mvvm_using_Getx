@@ -20,8 +20,7 @@ class _LoginViewState extends State<LoginView> {
       appBar: AppBar(
         title: Text("Login".tr),
         backgroundColor: Colors.tealAccent,
-        elevation: 20,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
+        elevation: 7,
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
@@ -81,12 +80,15 @@ class _LoginViewState extends State<LoginView> {
           const SizedBox(
             height: 40,
           ),
-          RoundButton(
-            title: 'Login'.tr,
-            onPress: () {
-              if (_formKey.currentState!.validate()) {}
-            },
-          ),
+          Obx(
+            () => RoundButton(
+              loading: LoginVM.loading.value,
+              title: 'Login'.tr,
+              onPress: () {
+                if (_formKey.currentState!.validate()) {}
+              },
+            ),
+          )
         ],
       ),
     );

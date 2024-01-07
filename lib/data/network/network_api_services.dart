@@ -36,8 +36,7 @@ class NetworkApiServices extends BaseApiServices {
     dynamic responseJson;
     try {
       final response = await http
-          .post(Uri.parse(url),
-              body: jsonEncode(data) //when data is from raw from
+          .post(Uri.parse(url), body: data //when data is from raw from
               //body : data (when data is not in raw from) formeddata
               )
           .timeout(const Duration(seconds: 10));
@@ -47,7 +46,9 @@ class NetworkApiServices extends BaseApiServices {
     } on RequestTimeOUt {
       throw RequestTimeOUt();
     }
-
+    if (kDebugMode) {
+      print(responseJson);
+    }
     return responseJson;
     // Rest of your code
   }
@@ -58,7 +59,8 @@ class NetworkApiServices extends BaseApiServices {
         dynamic responseJson = jsonDecode(response.body);
         return responseJson;
       case 400:
-        throw InvalidUrlException;
+        dynamic responseJson = jsonDecode(response.body);
+        return responseJson;
       default:
         throw FetchDataException(
             'Error accoured while communication with server ${response.statusCode}');
