@@ -23,7 +23,7 @@ class LoginVIewModel extends GetxController {
     _api.loginApi(data).then((value) {
       loading.value = false;
       print(value);
-      if (value['erroe'] == 'user not fount') {
+      if (value['erroe'] == 'user not found') {
         Utils.SnackBar('Login', value['error']);
       } else {
         Utils.SnackBar('Login', 'Login Successfully');

@@ -6,6 +6,7 @@ import '../../resources/routes/routes_name.dart';
 
 class SplashServices {
   void islogin() {
-    Timer(const Duration(seconds: 3), () => Get.toNamed(RouteName.loginView));
+    Timer(const Duration(milliseconds: 10),
+        () => Get.toNamed(RouteName.loginView));
   }
 }

@@ -85,7 +85,9 @@ class _LoginViewState extends State<LoginView> {
               loading: LoginVM.loading.value,
               title: 'Login'.tr,
               onPress: () {
-                if (_formKey.currentState!.validate()) {}
+                if (_formKey.currentState!.validate()) {
+                  LoginVM.loginApi();
+                }
               },
             ),
           )
